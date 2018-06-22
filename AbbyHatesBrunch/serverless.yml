@@ -90,6 +90,18 @@ functions:
         - Shared/Models/userModel.js
         - node_modules/**
 
+  validateLogin:
+    handler: ValidateLogin/handler.ValidateLogin
+    events: 
+          - http:
+              path: users
+              method: get
+    package:
+      include:
+        - ValidateLogin/handler.js
+        - Shared/Models/userModel.js
+        - node_modules/**
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
