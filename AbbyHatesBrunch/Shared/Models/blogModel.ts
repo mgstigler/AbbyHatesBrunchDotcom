@@ -1,5 +1,5 @@
 export interface BlogModel {
-    BlogID: number;
+    BlogID: string;
     BlogTitle: string;
     BlogContent: string;
     EggRating: number;
@@ -8,7 +8,7 @@ export interface BlogModel {
 
 // ex request 
 // {
-//     "BlogID": 1,
+//     "BlogID": "1",
 //     "BlogTitle": "string",
 //     "BlogContent": "string",
 //     "EggRating": 1,

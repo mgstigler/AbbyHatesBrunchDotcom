@@ -30,7 +30,7 @@ module.exports.CreateBlog = (event: BlogModel, context, callback) => {
     docClient.put(params, (err, data) => {
         if (err) {
             response.statusCode = 500;
-            console.error("Unable to create Room. Error JSON:", JSON.stringify(err, null, 2));
+            console.error("Unable to create Blog. Error JSON:", JSON.stringify(err, null, 2));
             response.message = "Unable to create Blog " + event.BlogTitle;
             callback(null, response);
         } else if(params == null){

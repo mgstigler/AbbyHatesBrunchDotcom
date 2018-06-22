@@ -64,6 +64,20 @@ functions:
         - Shared/Models/blogModel.js
         - node_modules/**
 
+  getBlog:
+    handler: GetBlog/handler.GetBlog
+    events: 
+          - http:
+              path: blog
+              method: get
+              request:
+                template:
+                  application/json: '{ "BlogID" : "$input.params(''BlogID'')" }'
+    package:
+      include:
+        - GetBlog/handler.js
+        - node_modules/**
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
