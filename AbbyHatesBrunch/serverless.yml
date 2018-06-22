@@ -102,6 +102,18 @@ functions:
         - Shared/Models/userModel.js
         - node_modules/**
 
+  updateBlog:
+    handler: UpdateBlog/handler.UpdateBlog
+    events: 
+          - http:
+              path: blog
+              method: post
+    package:
+      include:
+        - UpdateBlog/handler.js
+        - Shared/Models/blogModel.js
+        - node_modules/**
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
