@@ -1,28 +1,45 @@
-.App {
-  text-align: center;
+.main-page {
+    display: grid;
+    grid-template-columns: [page-left] 1.5fr [feed-left] 7fr [feed-right] 1.5fr [page-right];
+    grid-template-rows: [page-top header-top] auto [header-bottom feed-top] 1fr [feed-bottom footer-top] auto [footer-bottom page-bottom];
+    grid-template-areas: 
+        "header header header"
+        "left-sidebar feed right-sidebar"
+        "footer footer footer";
+    width: 100vw;
+    height: auto;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.header {
+    background-image: url(https://qcitymetro.com/wp-content/uploads/2018/03/brunch.jpg);
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    overflow: hidden;
+    animation-name: header-image-transition;
+    animation-duration: 
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.header-title {
+    font-size: 15vh;
+    color: black;
+    font-family: 'Snell Roundhand';
 }
 
-.App-title {
-  font-size: 1.5em;
+.blog-feed {
+    background-color: tan;
+    grid-area: feed;
+    overflow-y: auto;
 }
 
-.App-intro {
-  font-size: large;
+.footer {
+    background-color:black;
+    grid-area: footer;
+    height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes header-image-transition {
+
 }
