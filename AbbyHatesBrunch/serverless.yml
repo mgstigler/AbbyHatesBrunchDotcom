@@ -46,17 +46,73 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
+package:
+  individually: true
+  exclude:
+    - ./**
 
 functions:
-  hello:
-    handler: handler.hello
+  createBlog:
+    handler: CreateBlog/handler.CreateBlog
+    events: 
+          - http:
+              path: blog
+              method: put
+    package:
+      include:
+        - CreateBlog/handler.js
+        - Shared/Models/blogModel.js
+        - node_modules/**
+
+  getBlog:
+    handler: GetBlog/handler.GetBlog
+    events: 
+          - http:
+              path: blog
+              method: get
+              request:
+                template:
+                  application/json: '{ "BlogID" : "$input.params(''BlogID'')" }'
+    package:
+      include:
+        - GetBlog/handler.js
+        - node_modules/**
+
+  createLogin:
+    handler: CreateLogin/handler.CreateLogin
+    events: 
+          - http:
+              path: users
+              method: put
+    package:
+      include:
+        - CreateLogin/handler.js
+        - Shared/Models/userModel.js
+        - node_modules/**
+
+  validateLogin:
+    handler: ValidateLogin/handler.ValidateLogin
+    events: 
+          - http:
+              path: users
+              method: get
+    package:
+      include:
+        - ValidateLogin/handler.js
+        - Shared/Models/userModel.js
+        - node_modules/**
+
+  updateBlog:
+    handler: UpdateBlog/handler.UpdateBlog
+    events: 
+          - http:
+              path: blog
+              method: post
+    package:
+      include:
+        - UpdateBlog/handler.js
+        - Shared/Models/blogModel.js
+        - node_modules/**
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
