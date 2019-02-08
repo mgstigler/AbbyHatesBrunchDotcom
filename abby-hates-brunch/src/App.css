@@ -12,20 +12,28 @@
 
 .header {
     background-image: url(https://qcitymetro.com/wp-content/uploads/2018/03/brunch.jpg);
+    background-size: 100% 650px;
     grid-area: header;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 500px;
+    max-height: 500px;
     overflow: hidden;
-    animation-name: header-image-transition;
-    animation-duration: 
+    transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.header.closed {
+    max-height: 100px;
 }
 
 .header-title {
-    font-size: 15vh;
+    font-size: 100px;
     color: black;
     font-family: 'Snell Roundhand';
+    cursor: auto;
 }
 
 .blog-feed {
@@ -37,7 +45,12 @@
 .footer {
     background-color:black;
     grid-area: footer;
-    height: 100vh;
+    height: 300px;
+}
+
+.footer-value {
+    margin: 50px 50px;
+    color: white;
 }
 
 @keyframes header-image-transition {
