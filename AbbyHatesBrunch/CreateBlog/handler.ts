@@ -1,5 +1,6 @@
 'use strict';
 import * as AWS from "aws-sdk";
+import * as uuid from "uuid"
 import { BlogModel } from "../Shared/Models/blogModel"
 
 module.exports.CreateBlog = (event: BlogModel, context, callback) => {
@@ -12,11 +13,10 @@ module.exports.CreateBlog = (event: BlogModel, context, callback) => {
     let params = {
         TableName:table,
         Item:{
-            "BlogID": event.BlogID,
+            "BlogID": uuid.v1(),
             "BlogTitle": event.BlogTitle,
             "BlogContent": event.BlogContent,
-            "EggRating": event.EggRating,
-            "PictureId": event.PictureId
+            "Mimosas": event.Mimosas
         }
     };
 

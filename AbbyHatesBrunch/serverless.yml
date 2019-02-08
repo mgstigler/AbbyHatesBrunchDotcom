@@ -78,6 +78,31 @@ functions:
         - GetBlog/handler.js
         - node_modules/**
 
+  deleteBlog:
+    handler: DeleteBlog/handler.DeleteBlog
+    events: 
+          - http:
+              path: blog
+              method: delete
+              request:
+                template:
+                  application/json: '{ "BlogID" : "$input.params(''BlogID'')" }'
+    package:
+      include:
+        - DeleteBlog/handler.js
+        - node_modules/**
+
+  getBlogs:
+    handler: GetBlogs/handler.GetBlogs
+    events: 
+          - http:
+              path: blogs
+              method: get
+    package:
+      include:
+        - GetBlogs/handler.js
+        - node_modules/**
+
   createLogin:
     handler: CreateLogin/handler.CreateLogin
     events: 

@@ -19,8 +19,7 @@ module.exports.UpdateBlog = (event: BlogModel, context, callback) => {
         ExpressionAttributeValues:{
             ":bc": event.BlogContent,
             ":bt": event.BlogTitle,
-            ":er": event.EggRating,
-            ":pi": event.PictureId
+            ":m": event.Mimosas
         },
         ReturnValues:"UPDATED_NEW"
     };

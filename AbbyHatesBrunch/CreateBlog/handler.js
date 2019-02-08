@@ -1,26 +1,26 @@
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-const AWS = require("aws-sdk");
-module.exports.CreateBlog = (event, context, callback) => {
+exports.__esModule = true;
+var AWS = require("aws-sdk");
+var uuid = require("uuid");
+module.exports.CreateBlog = function (event, context, callback) {
     console.info("Received event: ", JSON.stringify(event, null, 2));
-    let docClient = new AWS.DynamoDB.DocumentClient();
-    let table = "Blogs";
-    let params = {
+    var docClient = new AWS.DynamoDB.DocumentClient();
+    var table = "Blogs";
+    var params = {
         TableName: table,
         Item: {
-            "BlogID": event.BlogID,
+            "BlogID": uuid.v1(),
             "BlogTitle": event.BlogTitle,
             "BlogContent": event.BlogContent,
-            "EggRating": event.EggRating,
-            "PictureId": event.PictureId
+            "Mimosas": event.Mimosas
         }
     };
-    let response = {
+    var response = {
         statusCode: 200,
         message: ""
     };
     console.log("Adding a new item...");
-    docClient.put(params, (err, data) => {
+    docClient.put(params, function (err, data) {
         if (err) {
             response.statusCode = 500;
             console.error("Unable to create Blog. Error JSON:", JSON.stringify(err, null, 2));
@@ -38,4 +38,3 @@ module.exports.CreateBlog = (event, context, callback) => {
         }
     });
 };
-//# sourceMappingURL=handler.js.map
