@@ -1,0 +1,22 @@
+{
+  "name": "abby-hates-brunch",
+  "version": "0.0.0",
+  "description": "CRUD operations for abby hating brunch",
+  "main": "app.js",
+  "author": {
+    "name": "mstigler, rstigler"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.34.0",
+    "module": "^1.2.5",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "0.0.9",
+    "@types/aws-sdk": "0.0.42",
+    "@types/node": "^7.0.12",
+    "aws-sdk-typescript": "0.0.3",
+    "typescript": "^2.9.2",
+    "typings": "^1.5.0"
+  }
+}
