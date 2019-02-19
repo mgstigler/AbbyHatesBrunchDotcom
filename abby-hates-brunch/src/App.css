@@ -1,6 +1,6 @@
 .main-page {
     display: grid;
-    grid-template-columns: [page-left] 1.5fr [feed-left] 7fr [feed-right] 1.5fr [page-right];
+    grid-template-columns: [page-left] 100px [feed-left] 1fr [feed-right] 100px [page-right];
     grid-template-rows: [page-top header-top] auto [header-bottom feed-top] 1fr [feed-bottom footer-top] auto [footer-bottom page-bottom];
     grid-template-areas: 
         "header header header"
@@ -22,7 +22,7 @@
     overflow: hidden;
     transition-property: all;
 	transition-duration: .5s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	transition-timing-function: cubic-bezier(0, 0.5, .5, 1);
 }
 
 .header.closed {
@@ -37,9 +37,19 @@
 }
 
 .blog-feed {
-    background-color: tan;
     grid-area: feed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     overflow-y: auto;
+}
+
+.blog-feed-loading {
+    grid-area: feed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
 }
 
 .footer {
