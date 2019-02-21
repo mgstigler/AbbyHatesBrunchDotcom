@@ -1,28 +1,53 @@
 .page-container {
   display: grid;
-  grid-template-rows: [page-top header-top] 100px [header-bottom content-top] calc(
-      100vh - 100px
-    ) [content-bottom];
+  grid-template-rows:
+    [page-top header-top] 150px [header-bottom content-top] calc(100vh - 150px)
+    [content-bottom];
   grid-template-areas: "header" "content";
   min-width: 100vw;
   min-height: auto;
 }
 
 .header {
-  background-image: url(https://qcitymetro.com/wp-content/uploads/2018/03/brunch.jpg);
-  background-size: 100% 650px;
   grid-area: header;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: auto;
+  position: relative;
+  height: 100%;
   width: auto;
   overflow: hidden;
 }
 
 .header-title {
-  font-size: 100px;
+  font-size: 70px;
   color: black;
-  font-family: "Snell Roundhand";
-  cursor: auto;
+  font-family: "Tangerine";
+
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+  /* background-color: transparent; */
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 500px;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.header-image {
+  background-image: url("./header-background.bmp");
+  /* Add the blur effect */
+  filter: blur(3px);
+  -webkit-filter: blur(4px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
