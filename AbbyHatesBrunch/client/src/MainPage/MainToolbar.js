@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Toolbar extends Component {
+export default class MainToolbar extends Component {
   render() {
     return (
       <div className="toolbar-container">

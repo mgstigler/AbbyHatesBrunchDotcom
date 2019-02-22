@@ -4,7 +4,7 @@
     [page-top header-top] 150px [header-bottom content-top] calc(100vh - 150px)
     [content-bottom];
   grid-template-areas: "header" "content";
-  min-width: 100vw;
+  width: 100%;
   min-height: auto;
 }
 
@@ -12,18 +12,17 @@
   grid-area: header;
   position: relative;
   height: 100%;
-  width: auto;
+  width: 100%;
   overflow: hidden;
 }
 
 .header-title {
-  font-size: 70px;
+  font-size: 400%;
   color: black;
   font-family: "Tangerine";
 
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
-  /* background-color: transparent; */
   font-weight: bold;
   border: 3px solid #f1f1f1;
   position: absolute;
@@ -38,14 +37,13 @@
 }
 
 .header-image {
-  background-image: url("./header-background.bmp");
+  background-image: url("./img/header-background.bmp");
   /* Add the blur effect */
   filter: blur(3px);
   -webkit-filter: blur(4px);
 
   /* Full height */
   height: 100%;
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;

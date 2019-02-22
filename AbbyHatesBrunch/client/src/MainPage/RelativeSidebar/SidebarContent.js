@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./MainPage.css";
 import { FaChevronLeft } from "react-icons/fa";
+
+import "../MainPage.css";
 
 export default class SidebarContent extends Component {
   render() {

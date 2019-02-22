@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Tile from "../Tile.js";
-import { API } from "../Constants.js";
 import MoonLoader from "react-spinners/MoonLoader";
+
+import Tile from "./Tile.js";
+import { API } from "../Constants.js";
 
 class BlogFeed extends Component {
   constructor(props) {
@@ -24,13 +25,13 @@ class BlogFeed extends Component {
   render() {
     if (this.state.blogPreviews === undefined) {
       return (
-        <div className="blog-feed-loading">
+        <div className="blog-feed-container blog-feed-loading">
           <MoonLoader />
         </div>
       );
     }
     return (
-      <div className="blog-feed">
+      <div className="blog-feed-container">
         {this.state.blogPreviews.map(blogPreview => (
           <Tile key={blogPreview.BlogID} blog={blogPreview} />
         ))}

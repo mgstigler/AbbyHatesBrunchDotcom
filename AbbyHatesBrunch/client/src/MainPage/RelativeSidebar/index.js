@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Sidebar from "react-sidebar";
-import SidebarContent from "./SidebarContent.js";
 import { FaBars } from "react-icons/fa";
-import "./MainPage.css";
+
+import SidebarContent from "./SidebarContent.js";
+
+import "../MainPage.css";
 
 export default class RelativeSidebar extends Component {
   constructor(props) {
